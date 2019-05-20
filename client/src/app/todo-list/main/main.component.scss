@@ -1,0 +1,47 @@
+.layout {
+
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+}
+
+.todo {
+  width: calc(100% - 322px);
+  height: 100%;
+  float: left;
+  background-color: #D8C7C8;
+  overflow: auto;
+  padding: 10px;
+}
+.vl {
+  width: 2px;
+  height: 100%;
+  background-color: #786263;
+  float: left;
+}
+
+.dead {
+  padding: 10px;
+  width: 320px;
+  height: 100%;
+  float: right;
+  background-color: #8C7273;
+  overflow-y: auto;
+}
+
+.new-todo {
+  top: 50%;
+  left: 50%;
+  margin-left:-240px;
+  color: #999999;
+  z-index: 1;
+  position: fixed;
+}
+.trash {
+  position: fixed;
+  width:100px;
+  height: 100px;
+  right: 325px;
+  bottom: 10px;
+}

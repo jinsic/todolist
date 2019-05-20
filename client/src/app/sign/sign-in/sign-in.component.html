@@ -1,0 +1,20 @@
+<h1><b>Sign in</b></h1>
+<br/>
+<form>
+  <div class="form-group">
+    <label for="emailInput">Email address</label>
+    <input #email type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="Email">
+  </div>
+  <br/>
+  <div class="form-group">
+    <label for="passwordInput">Password</label>
+    <input #password type="password" class="form-control" id="passwordInput" placeholder="Password">
+  </div>
+  <div class="form-group form-check">
+    <input #remain type="checkbox" class="form-check-input" id="remainSign">
+    <label class="form-check-label" for="remainSign">Remain sign</label>
+  </div>
+  <button class="btn btn-success" (click)="clickSignIn(email.value, password.value, remain.checked)">Sign in</button>
+  <br/><br/>
+  <button class="btn btn-primary" (click)="clickSignUp()">Sign up</button>
+</form>

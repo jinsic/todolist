@@ -1,0 +1,6 @@
+<div class="todo-list">
+  <h4>Done</h4>
+  <app-todo-list-card *ngFor="let todo of todos" [onDrag]="onDrag" [index]="todos.indexOf(todo)" (mouseUpCard)="mouseUpCard()"
+    [todo]="todo" (mouseDownCard)="mouseDownCard($event)" (mouseOnCard)="mouseOnCard($event)"></app-todo-list-card>
+  <app-draged-done-card #doneCard [main]="main"></app-draged-done-card>
+</div>

@@ -1,0 +1,36 @@
+<div class="todo">
+<div #card class="todo-card" [(style.top.px)]="top" [(style.z-index)]="index"
+  [(style.left.px)]="left" (mousedown)="mousedown($event)" (mouseup)="cardMouseUp($event)"
+  (window:mouseup)="mouseup($event)" (window:mousemove)="mousemove($event)">
+  <h5>{{title}}</h5>
+  <p>{{description}}</p>
+  <div #deadline class="deadline">
+    {{dueDate}} {{dueTime}}
+  </div>
+</div>
+<div #extendedCard class="extended-todo-card" [style.visibility]="extendedCardVisibility"
+  [style.top.px]="extendedCardTop" [style.left.px]="extendedCardLeft" (mousedown)="clickExtendedCard($event)">
+  <div class="form-group">
+    <label for="inputTitle"><h5>Title</h5></label>
+    <input [(ngModel)]="title" type="text" class="form-control" id="inputTitle" placeholder="Title">
+  </div>
+  <div class="form-group">
+    <label for="inputDescription"><h5>Description</h5></label>
+    <textarea [(ngModel)]="description" class="form-control" id="inputDescription" placeholder="Description"></textarea>
+  </div>
+  <div>
+    <div>
+      <h5>Due date</h5>
+      <div class="form-group form-date">
+        <input class="form-control due-date" [matDatepicker]="picker" [(ngModel)]="date" 
+          (ngModelChange)="pickDate($event)" (click)="picker.open()" placeholder="10/31/2018" readonly>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+      <div class="form-time">
+        <app-time-picker #timePicker (timeChanged)="pickTime($event)" ></app-time-picker>
+      </div>
+    </div>
+  </div>
+  <p class="close" (click)="closeExtendedCard($event)">x</p>
+</div>
+</div>

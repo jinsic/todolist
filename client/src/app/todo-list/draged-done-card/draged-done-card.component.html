@@ -1,0 +1,7 @@
+<div class="card" #card (window:mousemove)="mousemove($event)" (window:mouseup)="mouseup($event)">
+  <h5>{{title}}</h5>
+  <p>{{description}}</p>
+  <div class="deadline">
+    {{dueDate}} {{dueTime}}
+  </div>
+</div>

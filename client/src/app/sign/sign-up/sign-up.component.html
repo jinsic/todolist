@@ -1,0 +1,23 @@
+<div class="title">
+  <h1><b>Sign up</b></h1>
+  <a routerLink="/sign/in">back to sign in</a>
+</div>
+<br/>
+<form>
+  <div class="form-group">
+    <label for="nameInput">Name</label>
+    <input #name_ type="text" class="form-control" id="nameInput" placeholder="name">
+  </div>
+  <br/>
+  <div class="form-group">
+    <label for="emailInput">Email address</label>
+    <input #email type="email" class="form-control" id="emailInput" aria-describedby="emailHelp" placeholder="email">
+  </div>
+  <br/>
+  <div class="form-group">
+    <label for="passwordInput">Password</label>
+    <input #password type="password" class="form-control" id="passwordInput" placeholder="Password" required>
+  </div>
+  <br/>
+  <button type="button" class="btn btn-success" (click)="clickSignUp(name_.value, email.value, password.value)">Sign up</button>
+</form>

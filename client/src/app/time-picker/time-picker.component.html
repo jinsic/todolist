@@ -1,0 +1,21 @@
+<div>
+  <input type="text" #input [(ngModel)]="time" class="form-control form-time" readonly placeholder="12:00 AM"
+    (click)="click($event)" />
+
+  <div class="time-picker" #timePicker [(style.top.px)]="top" [(style.visibility)]="visibility" (window:click)="close($event)">
+    <img width="20px" height="10px" style="top:15px; left:15px" (click)="hourUp()" src="assets/images/up.png"/>
+    <img width="20px" height="10px" style="top:15px; left:85px" (click)="minUp()" src="assets/images/up.png"/>
+    <img width="20px" height="10px" style="top:15px; left:150px" (click)="noonUp()" src="assets/images/up.png"/>
+    <img width="20px" height="10px" style="bottom:15px; left:15px" (click)="hourDown()" src="assets/images/down.png"/>
+    <img width="20px" height="10px" style="bottom:15px; left:85px" (click)="minDown()" src="assets/images/down.png"/>
+    <img width="20px" height="10px" style="bottom:15px; left:150px" (click)="noonDown()" src="assets/images/down.png"/>
+    <div class="hour">
+      <b class="time">{{hour}}</b>
+    </div>
+    <p class="mid">:</p>
+    <div class="min">
+      <b class="time">{{min}}</b>
+    </div>
+    <p class="time noon" style="margin-left: 10px">{{noon}}</p>
+  </div>
+</div>
